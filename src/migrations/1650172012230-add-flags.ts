@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { simpleModelColumns } from 'core/constants/migrations-common-columns';
 
 export class addFlags1650172012230 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -6,11 +7,7 @@ export class addFlags1650172012230 implements MigrationInterface {
       new Table({
         name: 'flags',
         columns: [
-          {
-            name: 'id',
-            type: 'int',
-            isPrimary: true,
-          },
+          ...simpleModelColumns,
           {
             name: 'path',
             type: 'varchar',

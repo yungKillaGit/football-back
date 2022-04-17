@@ -8,7 +8,7 @@ import {
 
 @Entity()
 export class BaseModel {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @CreateDateColumn({ type: 'timestamp', default: () => 'now()' })
@@ -23,6 +23,6 @@ export class BaseModel {
 
 @Entity()
 export class SimpleBaseModel {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 }
