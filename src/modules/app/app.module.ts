@@ -3,6 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RegionsModule } from 'modules/regions/regions.module';
+import { FlagsModule } from 'modules/flags/flags.module';
+import { TeamsModule } from 'modules/teams/teams.module';
 
 @Module({
   imports: [
@@ -16,13 +19,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         migrationsTableName: 'migration',
-        migrations: ['src/migration/*.ts'],
-        entities: [],
+        migrations: ['dist/migrations/*.js'],
+        entities: ['dist/**/*.entity.js'],
         synchronize: false,
+        migrationsRun: true,
       }),
       inject: [ConfigService],
     }),
     ConfigModule.forRoot(),
+    RegionsModule,
+    FlagsModule,
+    TeamsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
