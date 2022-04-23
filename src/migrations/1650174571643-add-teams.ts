@@ -4,7 +4,7 @@ import {
   Table,
   TableForeignKey,
 } from 'typeorm';
-import { baseModelColumns } from 'core/constants/migrations-common-columns';
+import { BASE_MODEL_COLUMNS } from 'common/constants/migrations-common-columns';
 
 const tableName = 'teams';
 
@@ -14,7 +14,7 @@ export class addTeams1650174571643 implements MigrationInterface {
       new Table({
         name: tableName,
         columns: [
-          ...baseModelColumns,
+          ...BASE_MODEL_COLUMNS,
           {
             name: 'name',
             type: 'varchar',

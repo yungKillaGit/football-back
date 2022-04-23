@@ -1,5 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
-import { simpleModelColumns } from 'core/constants/migrations-common-columns';
+import { SIMPLE_MODEL_COLUMNS } from 'common/constants/migrations-common-columns';
 
 export class addRegions1650170126761 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -7,7 +7,7 @@ export class addRegions1650170126761 implements MigrationInterface {
       new Table({
         name: 'regions',
         columns: [
-          ...simpleModelColumns,
+          ...SIMPLE_MODEL_COLUMNS,
           {
             name: 'name',
             type: 'varchar',

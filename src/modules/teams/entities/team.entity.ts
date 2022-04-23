@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
-import { BaseModel } from 'core/entities/base-model.entity';
+import { BaseModel } from 'database/entities/base-model.entity';
 import { Flag } from 'modules/flags/entities/flag.entity';
 import { Region } from 'modules/regions/entities/region.entity';
 

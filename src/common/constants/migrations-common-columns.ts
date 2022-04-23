@@ -1,6 +1,6 @@
 import { TableColumnOptions } from 'typeorm';
 
-export const simpleModelColumns: TableColumnOptions[] = [
+export const SIMPLE_MODEL_COLUMNS: TableColumnOptions[] = [
   {
     name: 'id',
     type: 'int',
@@ -10,7 +10,7 @@ export const simpleModelColumns: TableColumnOptions[] = [
   },
 ];
 
-export const baseModelColumns: TableColumnOptions[] = [
+export const BASE_MODEL_COLUMNS: TableColumnOptions[] = [
   {
     name: 'id',
     type: 'int',

@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { FlagsSeederService } from 'core/database/seeders/flags/flags.service';
-import { RegionsSeederService } from 'core/database/seeders/regions/regions.service';
+import { FlagsSeederService } from 'database/seeders/flags/flags.service';
+import { RegionsSeederService } from 'database/seeders/regions/regions.service';
 
 @Injectable()
 export class Seeder {

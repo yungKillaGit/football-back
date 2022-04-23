@@ -4,7 +4,7 @@ import { Flag } from 'modules/flags/entities/flag.entity';
 import { Repository } from 'typeorm';
 import * as path from 'path';
 import * as fs from 'fs/promises';
-import { GenericSeeder } from 'core/database/seeders/generic-seeder';
+import { GenericSeeder } from 'database/seeders/generic-seeder';
 
 @Injectable()
 export class FlagsSeederService extends GenericSeeder<Flag> {

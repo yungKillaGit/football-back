@@ -1,5 +1,5 @@
 import { Column, Entity } from 'typeorm';
-import { SimpleBaseModel } from 'core/entities/base-model.entity';
+import { SimpleBaseModel } from 'database/entities/base-model.entity';
 
 @Entity({ name: 'flags' })
 export class Flag extends SimpleBaseModel {
