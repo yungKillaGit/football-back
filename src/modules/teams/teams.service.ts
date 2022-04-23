@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTeamDto } from './dto/create-team.dto';
-import { UpdateTeamDto } from './dto/update-team.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Team } from 'modules/teams/entities/team.entity';
 import { Repository } from 'typeorm';
+import { UpdateTeamDto } from './dto/update-team.dto';
+import { CreateTeamDto } from './dto/create-team.dto';
 
 @Injectable()
 export class TeamsService {

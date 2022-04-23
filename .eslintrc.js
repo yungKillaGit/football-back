@@ -22,6 +22,19 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'no-trailing-spaces': 'off',
-    'class-methods-use-this': 'off'
+    'class-methods-use-this': 'off',
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          "FunctionExpression > .params[decorators.length > 0]",
+          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+        ]
+      }
+    ],
+    'import/prefer-default-export': 'off',
+    'max-classes-per-file': 'warn',
   },
 };

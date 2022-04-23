@@ -21,7 +21,7 @@ export class GenericSeeder<T> {
     }
 
     try {
-      return this.repository
+      this.repository
         .save(data || this.getData())
         .then(() => {
           this.logger.debug(`${this.name} seeding completed`);
@@ -32,7 +32,7 @@ export class GenericSeeder<T> {
           return Promise.reject(e);
         });
     } catch (e) {
-      return Promise.reject(e);
+      await Promise.reject(e);
     }
   }
 }
