@@ -15,6 +15,9 @@ async function bootstrap() {
   app.useStaticAssets(path.join(__dirname, '..', 'public'));
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
   app.useGlobalInterceptors(new MapResponseInterceptor());
+  app.enableCors({
+    origin: '*',
+  });
 
   await app.listen(port);
 
