@@ -17,7 +17,7 @@ export class FlagsSeederService extends GenericSeeder<Flag> {
   }
 
   async create() {
-    const flagPath = path.resolve(__dirname, '../../../../../public/flags');
+    const flagPath = path.resolve(__dirname, '../../../../public/flags');
     try {
       await fs.access(flagPath);
     } catch (e) {

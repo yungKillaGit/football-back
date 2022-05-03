@@ -1,9 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Flag } from 'modules/flags/entities/flag.entity';
-import { Region } from 'modules/regions/entities/region.entity';
-import { Team } from 'modules/teams/entities/team.entity';
+import { entities } from 'database/entities';
 
 @Module({
   imports: [
@@ -18,7 +16,7 @@ import { Team } from 'modules/teams/entities/team.entity';
         database: configService.get('DB_NAME'),
         migrationsTableName: 'migration',
         migrations: ['dist/migrations/*.js'],
-        entities: [Flag, Region, Team],
+        entities,
         synchronize: +configService.get('DB_SYNC') === 1,
         migrationsRun: +configService.get('DB_RUN_MIGRATIONS') === 1,
         logging: +configService.get('DB_LOGGING') === 1,
