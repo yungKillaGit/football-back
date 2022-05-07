@@ -1,26 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CreateFlagDto } from './dto/create-flag.dto';
-import { UpdateFlagDto } from './dto/update-flag.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Flag } from './entities/flag.entity';
 
 @Injectable()
 export class FlagsService {
-  create(createFlagDto: CreateFlagDto) {
-    return 'This action adds a new flag';
+  constructor(
+    @InjectRepository(Flag)
+    private readonly repository: Repository<Flag>,
+  ) {
   }
 
   findAll() {
-    return `This action returns all flags`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} flag`;
-  }
-
-  update(id: number, updateFlagDto: UpdateFlagDto) {
-    return `This action updates a #${id} flag`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} flag`;
+    return this.repository.find();
   }
 }
