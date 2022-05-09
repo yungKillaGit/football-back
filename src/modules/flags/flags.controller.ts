@@ -4,7 +4,7 @@ import {
 } from '@nestjs/common';
 import { FlagsService } from './flags.service';
 
-@Controller('flags')
+@Controller('country-flags')
 export class FlagsController {
   constructor(private readonly flagsService: FlagsService) {}
 

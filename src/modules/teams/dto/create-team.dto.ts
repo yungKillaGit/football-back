@@ -1,4 +1,5 @@
 import { IsNotEmpty, Length } from 'class-validator';
+import { CreatePlayerDto } from './create-player.dto';
 
 export class CreateTeamDto {
   @IsNotEmpty()
@@ -11,4 +12,7 @@ export class CreateTeamDto {
   regionId: number;
 
   flagId?: number;
+
+  @IsNotEmpty()
+  players: CreatePlayerDto[];
 }
