@@ -9,7 +9,7 @@ import {
   ParsedBody,
   ParsedRequest,
 } from '@nestjsx/crud';
-import { CreateTeamDto } from './dto/create-team.dto';
+import { CreateTeamDto, UpdateTeamDto } from './dto/team.dto';
 import { Team } from './entities/team.entity';
 import { TeamsService } from './teams.service';
 
@@ -25,6 +25,17 @@ import { TeamsService } from './teams.service';
       flag: {
         eager: true,
       },
+      players: {
+        eager: true,
+      },
+      'players.position': {
+        eager: true,
+      },
+    },
+  },
+  routes: {
+    deleteOneBase: {
+      returnDeleted: true,
     },
   },
 })
@@ -37,6 +48,14 @@ export class TeamsController implements CrudController<Team> {
     @ParsedRequest() req: CrudRequest,
     @ParsedBody() dto: CreateTeamDto,
   ) {
-    return this.service.createTeam(dto);
+    return this.service.createTeam(req, dto);
+  }
+
+  @Override()
+  updateOne(
+    @ParsedRequest() req: CrudRequest,
+    @ParsedBody() dto: UpdateTeamDto,
+  ) {
+    return this.service.updateTeam(req, dto);
   }
 }

@@ -9,3 +9,7 @@ export class CreatePlayerDto {
 
   positionId: number;
 }
+
+export class UpdatePlayerDto extends CreatePlayerDto {
+  id: number;
+}

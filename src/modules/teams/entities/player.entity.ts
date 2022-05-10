@@ -8,7 +8,7 @@ import {
 import { BaseModel } from '../../../database/entities/base-model.entity';
 import { Team } from './team.entity';
 
-@Entity({ name: 'players' })
+@Entity({ name: 'players', orderBy: { displayId: 'ASC' } })
 export class Player extends BaseModel {
   @Column('character varying', { name: 'firstName', nullable: true })
   firstName: string | null;
@@ -38,4 +38,7 @@ export class Player extends BaseModel {
 
   @Column()
   teamId: number;
+
+  @Column()
+  displayId: number;
 }
