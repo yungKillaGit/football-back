@@ -37,5 +37,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'max-classes-per-file': 'off',
     '@typescript-eslint/no-useless-constructor': 'off',
+    'arrow-body-style': 'off'
   },
 };

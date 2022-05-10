@@ -5,6 +5,7 @@ import { Seeder } from 'database/seeders/seeder';
 import { ConfigModule } from '@nestjs/config';
 import { RegionsSeederModule } from 'database/seeders/regions/regions.module';
 import { PlayerPositionsSeederModule } from 'database/seeders/player-positions/player-positions.module';
+import { TeamsSeederModule } from './teams/teams.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { PlayerPositionsSeederModule } from 'database/seeders/player-positions/p
     FlagsSeederModule,
     RegionsSeederModule,
     PlayerPositionsSeederModule,
+    TeamsSeederModule,
   ],
   providers: [Logger, Seeder],
 })
