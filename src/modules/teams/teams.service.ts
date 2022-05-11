@@ -5,6 +5,7 @@ import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { Team } from 'modules/teams/entities/team.entity';
 import { Repository } from 'typeorm';
 import { FlagsService } from '../flags/flags.service';
+import { Region } from '../regions/entities/region.entity';
 import { CreateTeamDto, UpdateTeamDto } from './dto/team.dto';
 import { Player } from './entities/player.entity';
 
@@ -37,20 +38,28 @@ export class TeamsService extends TypeOrmCrudService<Team> {
 
   async updateTeam(
     req: CrudRequest,
+    id: number,
     updateTeamDto: UpdateTeamDto,
   ) {
     const { players: { changed, deleted }, ...team } = updateTeamDto;
-    if (!team.flagId) {
-      team.flagId = (await this.flagsService.getDefaultFlag()).id;
-    }
-    const savedTeam = await this.updateOne(req, team);
 
-    const changedPlayers = this.playersRepository.create(changed).map((x) => ({ ...x, team: savedTeam }));
+    const teamObj = await this.repo.findOneBy({ id });
+    this.repo.merge(teamObj, team);
+
+    await this.repo.save(teamObj);
+
+    const changedPlayers = this.playersRepository.create(changed).map((x) => ({ ...x, team: teamObj }));
     const deletedPlayers = this.playersRepository.create(deleted);
 
     await this.playersRepository.save(changedPlayers);
     await this.playersRepository.remove(deletedPlayers);
 
     return this.getOne(req);
+  }
+
+  async delete(req: CrudRequest) {
+    const deletedTeam = await this.getOne(req);
+    await this.playersRepository.remove(deletedTeam.players);
+    return this.deleteOne(req);
   }
 }

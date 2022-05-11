@@ -1,5 +1,5 @@
 import {
-  Controller,
+  Controller, Param,
 } from '@nestjs/common';
 import {
   Crud,
@@ -16,6 +16,10 @@ import { TeamsService } from './teams.service';
 @Crud({
   model: {
     type: Team,
+  },
+  dto: {
+    create: CreateTeamDto,
+    update: UpdateTeamDto,
   },
   query: {
     join: {
@@ -52,10 +56,18 @@ export class TeamsController implements CrudController<Team> {
   }
 
   @Override()
-  updateOne(
+  replaceOne(
     @ParsedRequest() req: CrudRequest,
     @ParsedBody() dto: UpdateTeamDto,
+    @Param('id') id: string,
   ) {
-    return this.service.updateTeam(req, dto);
+    return this.service.updateTeam(req, +id, dto);
+  }
+
+  @Override()
+  async deleteOne(
+    @ParsedRequest() req: CrudRequest,
+  ) {
+    return this.service.delete(req);
   }
 }

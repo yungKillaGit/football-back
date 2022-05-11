@@ -53,7 +53,7 @@ export class addPlayers1652081985129 implements MigrationInterface {
         columnNames: ['teamId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'teams',
-        onDelete: 'SET NULL',
+        onDelete: 'NO ACTION',
       }),
     );
   }

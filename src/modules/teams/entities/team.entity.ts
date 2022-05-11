@@ -15,14 +15,14 @@ export class Team extends BaseModel {
   countryCode: string;
 
   @OneToOne(() => Flag)
-  @JoinColumn()
+  @JoinColumn({ name: 'flagId' })
   flag?: Flag;
 
   @Column()
   flagId?: number;
 
   @OneToOne(() => Region)
-  @JoinColumn()
+  @JoinColumn({ name: 'regionId' })
   region: Region;
 
   @Column()
