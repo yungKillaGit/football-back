@@ -28,9 +28,4 @@ export const BASE_MODEL_COLUMNS: TableColumnOptions[] = [
     type: 'timestamp',
     default: 'now()',
   },
-  {
-    name: 'deleted',
-    type: 'boolean',
-    default: false,
-  },
 ];

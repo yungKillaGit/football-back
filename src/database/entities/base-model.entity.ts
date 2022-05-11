@@ -1,5 +1,4 @@
 import {
-  Column,
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
@@ -16,9 +15,6 @@ export class BaseModel {
 
   @UpdateDateColumn({ type: 'timestamp', default: () => 'now()' })
   updated: Date;
-
-  @Column({ default: false })
-  deleted: boolean;
 }
 
 @Entity()
