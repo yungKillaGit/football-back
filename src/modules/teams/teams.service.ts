@@ -5,7 +5,6 @@ import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { Team } from 'modules/teams/entities/team.entity';
 import { Repository } from 'typeorm';
 import { FlagsService } from '../flags/flags.service';
-import { Region } from '../regions/entities/region.entity';
 import { CreateTeamDto, UpdateTeamDto } from './dto/team.dto';
 import { Player } from './entities/player.entity';
 

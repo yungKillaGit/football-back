@@ -8,6 +8,7 @@ import { TeamsModule } from 'modules/teams/teams.module';
 import { PostgresDBProviderModule } from 'database/providers/postgres/provider.module';
 import { PlayerPositionsModule } from 'modules/player-positions/player-positions.module';
 import { LoggerMiddleware } from '../common/middlewares/logger.middleware';
+import { TournamentsModule } from '../modules/tournaments/tournaments.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { LoggerMiddleware } from '../common/middlewares/logger.middleware';
     FlagsModule,
     TeamsModule,
     PlayerPositionsModule,
+    TournamentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
