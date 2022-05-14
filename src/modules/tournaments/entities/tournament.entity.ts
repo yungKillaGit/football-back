@@ -16,6 +16,10 @@ export class Tournament extends BaseModel {
   endDate: Date;
 
   @ManyToMany(() => Team)
-  @JoinTable()
+  @JoinTable({
+    name: 'tournament-teams',
+    inverseJoinColumn: { name: 'teamId' },
+    joinColumn: { name: 'tournamentId' },
+  })
   teams: Team[];
 }
