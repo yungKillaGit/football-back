@@ -29,18 +29,15 @@ import { TeamsService } from './teams.service';
       flag: {
         eager: true,
       },
-      players: {
-        eager: true,
-      },
-      'players.position': {
-        eager: true,
-      },
+      players: {},
+      'players.position': {},
     },
-  },
-  routes: {
-    deleteOneBase: {
-      returnDeleted: true,
-    },
+    sort: [
+      {
+        field: 'created',
+        order: 'DESC',
+      },
+    ],
   },
 })
 @Controller('teams')
@@ -59,15 +56,16 @@ export class TeamsController implements CrudController<Team> {
   replaceOne(
     @ParsedRequest() req: CrudRequest,
     @ParsedBody() dto: UpdateTeamDto,
-    @Param('id') id: string,
+    @Param('id') id: number,
   ) {
-    return this.service.updateTeam(req, +id, dto);
+    return this.service.updateTeam(req, id, dto);
   }
 
   @Override()
   async deleteOne(
     @ParsedRequest() req: CrudRequest,
+    @Param('id') id: number,
   ) {
-    return this.service.delete(req);
+    return this.service.delete(req, id);
   }
 }

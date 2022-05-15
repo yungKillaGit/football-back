@@ -56,8 +56,11 @@ export class TeamsService extends TypeOrmCrudService<Team> {
     return this.getOne(req);
   }
 
-  async delete(req: CrudRequest) {
-    const deletedTeam = await this.getOne(req);
+  async delete(req: CrudRequest, id: number) {
+    const deletedTeam = await this.repo.findOne({
+      where: { id },
+      relations: ['players'],
+    });
     await this.playersRepository.remove(deletedTeam.players);
     return this.deleteOne(req);
   }

@@ -20,11 +20,12 @@ import { TournamentsService } from './tournaments.service';
         eager: true,
       },
     },
-  },
-  routes: {
-    deleteOneBase: {
-      returnDeleted: true,
-    },
+    sort: [
+      {
+        field: 'created',
+        order: 'DESC',
+      },
+    ],
   },
 })
 @Controller('tournaments')
