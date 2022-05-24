@@ -21,6 +21,17 @@ import { TournamentsService } from './tournaments.service';
     join: {
       teams: {},
       tournamentGroups: {},
+      tournamentStages: {
+      },
+      'tournamentStages.games': {
+        alias: 'games',
+      },
+      'tournamentStages.games.homeTeam': {
+        alias: 'homeTeam',
+      },
+      'tournamentStages.games.awayTeam': {
+        alias: 'awayTeam',
+      },
     },
     sort: [
       {
