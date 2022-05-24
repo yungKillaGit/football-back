@@ -1,15 +1,27 @@
-import { Flag } from 'modules/flags/entities/flag.entity';
-import { Region } from 'modules/regions/entities/region.entity';
-import { Team } from 'modules/teams/entities/team.entity';
-import { PlayerPosition } from 'modules/player-positions/entities/player-position.entity';
-import { Player } from '../../modules/teams/entities/player.entity';
-import { Tournament } from '../../modules/tournaments/entities/tournament.entity';
+import { Flag } from 'database/entities/flag.entity';
+import { Region } from 'database/entities/region.entity';
+import { Team } from 'database/entities/team.entity';
+import { PlayerPosition } from 'database/entities/player-position.entity';
+import { GameEvent } from './game-event.entity';
+import { Game } from './game.entity';
+import { GroupTeam } from './group-team.entity';
+import { Player } from './player.entity';
+import { TournamentGameEvent } from './tournament-game-event.entity';
+import { TournamentGroup } from './tournament-group.entity';
+import { TournamentStage } from './tournament-stage.entity';
+import { Tournament } from './tournament.entity';
 
 export const entities = [
   Flag,
+  Game,
+  GameEvent,
+  GroupTeam,
+  Player,
+  PlayerPosition,
   Region,
   Team,
-  PlayerPosition,
-  Player,
   Tournament,
+  TournamentGameEvent,
+  TournamentGroup,
+  TournamentStage,
 ];

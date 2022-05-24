@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { CrudController } from 'modules/crud/crud.controller';
-import { Region } from 'modules/regions/entities/region.entity';
+import { Region } from '@entities/region.entity';
 import { RegionsService } from './regions.service';
 
 @Controller('regions')

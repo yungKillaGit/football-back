@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany } from 'typeorm';
 import { SimpleBaseModel } from 'database/entities/base-model.entity';
-import { Player } from 'modules/teams/entities/player.entity';
+import { Player } from 'database/entities/player.entity';
 
 @Entity({ name: 'player-positions' })
 export class PlayerPosition extends SimpleBaseModel {

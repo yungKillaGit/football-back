@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { GenericSeeder } from 'database/seeders/generic-seeder';
-import { Region } from 'modules/regions/entities/region.entity';
+import { Region } from '@entities/region.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { regionsSeedData } from 'database/seeders/regions/data';

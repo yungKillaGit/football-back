@@ -1,11 +1,11 @@
 import { Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Flag } from '../../../modules/flags/entities/flag.entity';
+import { Flag } from '@entities/flag.entity';
 import { FlagsService } from '../../../modules/flags/flags.service';
-import { PlayerPosition } from '../../../modules/player-positions/entities/player-position.entity';
-import { Region } from '../../../modules/regions/entities/region.entity';
-import { Player } from '../../../modules/teams/entities/player.entity';
-import { Team } from '../../../modules/teams/entities/team.entity';
+import { PlayerPosition } from '@entities/player-position.entity';
+import { Region } from '@entities/region.entity';
+import { Player } from '@entities/player.entity';
+import { Team } from '@entities/team.entity';
 import { TeamsSeederService } from './teams.service';
 
 @Module({

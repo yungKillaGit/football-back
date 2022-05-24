@@ -1,6 +1,6 @@
 import { Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Flag } from 'modules/flags/entities/flag.entity';
+import { Flag } from '@entities/flag.entity';
 import { FlagsSeederService } from 'database/seeders/flags/flags.service';
 
 @Module({

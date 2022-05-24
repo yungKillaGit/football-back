@@ -1,6 +1,6 @@
 import { Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Region } from 'modules/regions/entities/region.entity';
+import { Region } from '@entities/region.entity';
 import { RegionsSeederService } from 'database/seeders/regions/regions.service';
 
 @Module({

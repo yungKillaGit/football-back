@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PlayerPosition } from './entities/player-position.entity';
+import { PlayerPosition } from '@entities/player-position.entity';
 import { PlayerPositionsService } from './player-positions.service';
 import { PlayerPositionsController } from './player-positions.controller';
 

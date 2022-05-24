@@ -3,10 +3,10 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { FlagsService } from '../../../modules/flags/flags.service';
-import { PlayerPosition } from '../../../modules/player-positions/entities/player-position.entity';
-import { Region } from '../../../modules/regions/entities/region.entity';
-import { Player } from '../../../modules/teams/entities/player.entity';
-import { Team } from '../../../modules/teams/entities/team.entity';
+import { PlayerPosition } from '@entities/player-position.entity';
+import { Region } from '@entities/region.entity';
+import { Player } from '@entities/player.entity';
+import { Team } from '@entities/team.entity';
 
 @Injectable()
 export class TeamsSeederService {

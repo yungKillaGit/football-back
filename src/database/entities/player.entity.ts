@@ -1,11 +1,11 @@
-import { PlayerPosition } from 'modules/player-positions/entities/player-position.entity';
 import {
   Column,
   Entity,
   JoinColumn,
   ManyToOne,
 } from 'typeorm';
-import { BaseModel } from '../../../database/entities/base-model.entity';
+import { PlayerPosition } from './player-position.entity';
+import { BaseModel } from './base-model.entity';
 import { Team } from './team.entity';
 
 @Entity({ name: 'players', orderBy: { displayId: 'ASC' } })

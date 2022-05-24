@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { GenericSeeder } from 'database/seeders/generic-seeder';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PlayerPosition } from 'modules/player-positions/entities/player-position.entity';
+import { PlayerPosition } from '@entities/player-position.entity';
 import { playerPositionsSeedData } from 'database/seeders/player-positions/data';
 
 @Injectable()

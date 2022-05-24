@@ -1,6 +1,6 @@
 import { Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PlayerPosition } from 'modules/player-positions/entities/player-position.entity';
+import { PlayerPosition } from '@entities/player-position.entity';
 import { PlayerPositionsSeederService } from 'database/seeders/player-positions/player-positions.service';
 
 @Module({

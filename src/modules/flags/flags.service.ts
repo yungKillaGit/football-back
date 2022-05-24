@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Like, Not, Repository } from 'typeorm';
-import { Flag } from './entities/flag.entity';
+import { Flag } from '@entities/flag.entity';
 
 @Injectable()
 export class FlagsService {

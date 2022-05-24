@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { entities } from '../../entities';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         synchronize: +configService.get('DB_SYNC') === 1,
         migrationsRun: +configService.get('DB_RUN_MIGRATIONS') === 1,
         logging: +configService.get('DB_LOGGING') === 1,
-        autoLoadEntities: true,
+        entities,
       }),
       inject: [ConfigService],
     }),

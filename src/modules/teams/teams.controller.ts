@@ -10,7 +10,7 @@ import {
   ParsedRequest,
 } from '@nestjsx/crud';
 import { CreateTeamDto, UpdateTeamDto } from './dto/team.dto';
-import { Team } from './entities/team.entity';
+import { Team } from '@entities/team.entity';
 import { TeamsService } from './teams.service';
 
 @Crud({

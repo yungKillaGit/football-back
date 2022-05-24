@@ -1,9 +1,12 @@
-import { Controller, Param } from '@nestjs/common';
+import {
+  Body, Controller, Param, Post,
+} from '@nestjs/common';
 import {
   Crud, CrudController, CrudRequest, Override, ParsedBody, ParsedRequest,
 } from '@nestjsx/crud';
+import { Tournament } from '@entities/tournament.entity';
+import { GroupTeamsDto } from './dto/group-teams.dto';
 import { CreateTournamentDto, UpdateTournamentDto } from './dto/tournament.dto';
-import { Tournament } from './entities/tournament.entity';
 import { TournamentsService } from './tournaments.service';
 
 @Crud({
@@ -16,9 +19,8 @@ import { TournamentsService } from './tournaments.service';
   },
   query: {
     join: {
-      teams: {
-        eager: true,
-      },
+      teams: {},
+      tournamentGroups: {},
     },
     sort: [
       {
@@ -47,5 +49,13 @@ export class TournamentsController implements CrudController<Tournament> {
     @Param('id') id: number,
   ) {
     return this.service.update(req, id, dto);
+  }
+
+  @Post('/:id/teams')
+  allocateTeams(
+    @Body() dto: GroupTeamsDto,
+    @Param('id') id: number,
+  ) {
+    return this.service.allocateTeams(id, dto);
   }
 }

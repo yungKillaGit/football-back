@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Flag } from 'modules/flags/entities/flag.entity';
+import { Flag } from '@entities/flag.entity';
 import { Repository } from 'typeorm';
 import * as path from 'path';
 import * as fs from 'fs/promises';

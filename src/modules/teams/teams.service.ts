@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CrudRequest } from '@nestjsx/crud';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { Team } from 'modules/teams/entities/team.entity';
+import { Team } from '@entities/team.entity';
 import { Repository } from 'typeorm';
 import { FlagsService } from '../flags/flags.service';
 import { CreateTeamDto, UpdateTeamDto } from './dto/team.dto';
-import { Player } from './entities/player.entity';
+import { Player } from '@entities/player.entity';
 
 @Injectable()
 export class TeamsService extends TypeOrmCrudService<Team> {
